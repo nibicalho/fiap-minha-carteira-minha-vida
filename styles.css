@@ -1,0 +1,296 @@
+:root {
+    --color-bg: #F5F7FA;
+    --color-text-main: #2F4858;
+    --color-highlight: #EA6324;
+    --color-success: #198754;
+    --color-white: #FFFFFF;
+    --font-main: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-text-main);
+    font-weight: 600;
+}
+
+/* Utilitários */
+.text-main {
+    color: var(--color-text-main);
+}
+
+/* Cabeçalho Mobile */
+.cabecalhoMobile {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .cabecalhoMobile {
+        display: none;
+    }
+}
+
+.containerCabecalhoMobile {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.botaoAbrirMenuLateral {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.iconeMenuHamburguer {
+    font-size: 1.75rem;
+    /* fs-3 */
+    color: var(--color-text-main);
+}
+
+.tituloPaginaMobile {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: var(--color-text-main);
+}
+
+/* Barra de Navegação Desktop */
+.navegacaoDesktop {
+    background-color: var(--color-white);
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .navegacaoDesktop {
+        display: flex;
+    }
+}
+
+.marcaEmpresa {
+    font-weight: bold;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.listaNavegacaoDesktop {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    gap: 1.5rem;
+}
+
+.linkNavegacaoDesktop {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6c757d;
+    /* text-muted */
+}
+
+.linkNavegacaoDesktop.ativo {
+    color: var(--color-text-main);
+    font-weight: bold;
+}
+
+
+
+/* Controle de Alternância de Visão (Abas) */
+.controleAlternarVisao {
+    background-color: var(--color-white);
+    padding: 0.25rem;
+    border-radius: 50rem;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    display: flex;
+}
+
+.botaoVisaoAtiva {
+    background-color: var(--color-white) !important;
+    color: var(--color-text-main) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50rem;
+    flex: 1 1 auto;
+    font-weight: bold;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    text-align: center;
+    text-decoration: none;
+    padding: 0.375rem 0.75rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.botaoVisaoInativa {
+    flex: 1 1 auto;
+    text-decoration: none;
+    color: #6c757d;
+    /* text-muted */
+    border-radius: 50rem;
+    text-align: center;
+    padding: 0.375rem 0.75rem;
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.botaoVisaoInativa:hover {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+/* Conteúdo Principal */
+.conteudoPrincipal {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Painel de Resumo Mensal */
+.painelResumoMensal {
+    background: var(--color-white);
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.labelResumoMensal {
+    color: #6c757d;
+    /* text-muted */
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.valorSaldoMensal {
+    font-weight: bold;
+    color: var(--color-success);
+    margin-bottom: 0;
+}
+
+/* Feed de Transações */
+.feedTransacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cardTransacaoIndividual {
+    background: var(--color-white);
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grupoDetalhesTransacao {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatarIconeCategoria {
+    background-color: #E8ECEF !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.iconeCategoria {
+    color: var(--color-text-main);
+    font-size: 1.25rem;
+    /* fs-5 */
+}
+
+.nomeTransacao {
+    margin-bottom: 0;
+    font-weight: bold;
+    color: var(--color-text-main);
+}
+
+.nomeCategoria {
+    color: #6c757d;
+    /* text-muted */
+}
+
+.valorTransacao {
+    font-weight: bold;
+    color: var(--color-success);
+}
+
+/* FAB - Botão de Novo Registro */
+.botaoFlutuanteNovoRegistro {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-text-main);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    z-index: 1040;
+    /* Lower than Bootstrap Offcanvas (1045) */
+    transition: transform 0.2s;
+}
+
+.botaoFlutuanteNovoRegistro:hover {
+    transform: scale(1.1);
+    color: var(--color-white);
+}
+
+.iconeBotaoAdicionar {
+    font-size: 2rem;
+    /* fs-2 */
+}
+
+/* Links de Navegação Lateral */
+.linkNavegacaoLateral {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.linkNavegacaoLateral:hover {
+    background-color: #f8f9fa;
+    color: var(--color-text-main);
+}
+
+.linkNavegacaoLateral.ativo {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
