@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Transações - Minha Carteira Minha Vida</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Cabeçalho Mobile com Menu Hambúrguer -->
+    <header class="cabecalhoMobile container-fluid">
+        <div class="containerCabecalhoMobile">
+            <button class="botaoAbrirMenuLateral" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#menuLateral">
+                <i class="bi bi-list iconeMenuHamburguer"></i>
+            </button>
+            <h5 class="tituloPaginaMobile">Histórico</h5>
+        </div>
+    </header>
+
+    <!-- Navegação Desktop -->
+    <nav class="navegacaoDesktop navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="marcaEmpresa navbar-brand" href="placeholder.html">
+                <img src="logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Minha Carteira
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="listaNavegacaoDesktop navbar-nav">
+                    <li class="nav-item">
+                        <a class="linkNavegacaoDesktop nav-link" href="placeholder.html">
+                            <i class="bi bi-house iconeNavegacao"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="linkNavegacaoDesktop ativo nav-link" href="#">
+                            <i class="bi bi-currency-dollar iconeNavegacao"></i>
+                            Transações
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="linkNavegacaoDesktop nav-link" href="placeholder.html">
+                            <i class="bi bi-file-earmark-bar-graph iconeNavegacao"></i>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="linkNavegacaoDesktop nav-link" href="placeholder.html">
+                            <i class="bi bi-gear iconeNavegacao"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="placeholder.html" class="text-decoration-none text-muted me-3">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Lateral (Mobile) -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold text-main">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column gap-3">
+            <a href="placeholder.html" class="linkNavegacaoLateral">
+                <i class="bi bi-house fs-4"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="linkNavegacaoLateral ativo">
+                <i class="bi bi-currency-dollar fs-4"></i>
+                <span>Transações</span>
+            </a>
+            <a href="placeholder.html" class="linkNavegacaoLateral">
+                <i class="bi bi-file-earmark-bar-graph fs-4"></i>
+                <span>Relatórios</span>
+            </a>
+            <a href="placeholder.html" class="linkNavegacaoLateral">
+                <i class="bi bi-gear fs-4"></i>
+                <span>Configurações</span>
+            </a>
+            <a href="placeholder.html" class="linkNavegacaoLateral mt-auto">
+                <i class="bi bi-box-arrow-right fs-4"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudoPrincipal container-fluid">
+
+        <!-- Abas -->
+        <div class="row mt-3 mb-4">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="controleAlternarVisao">
+                    <button id="btnReceitas" class="botaoVisaoAtiva" onclick="alternarAba('receitas')">Receitas</button>
+                    <button id="btnDespesas" class="botaoVisaoInativa"
+                        onclick="alternarAba('despesas')">Despesas</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container de Conteúdo -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <!-- CONTEÚDO DE RECEITAS -->
+                <div id="conteudoReceitas">
+                    <!-- Cartão de Resumo -->
+                    <div class="painelResumoMensal">
+                        <h6 class="labelResumoMensal">Total de Receitas do Mês</h6>
+                        <h2 class="valorSaldoMensal">R$ 12.500,00</h2>
+                    </div>
+
+                    <!-- Lista de Transações -->
+                    <div class="feedTransacoes">
+                        <!-- Item 1 -->
+                        <div class="cardTransacaoIndividual">
+                            <div class="grupoDetalhesTransacao">
+                                <div class="avatarIconeCategoria">
+                                    <i class="bi bi-briefcase iconeCategoria"></i>
+                                </div>
+                                <div>
+                                    <h6 class="nomeTransacao">Salário</h6>
+                                    <small class="nomeCategoria">Trabalho</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="valorTransacao">R$ 5.000,00</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="cardTransacaoIndividual">
+                            <div class="grupoDetalhesTransacao">
+                                <div class="avatarIconeCategoria">
+                                    <i class="bi bi-graph-up-arrow iconeCategoria"></i>
+                                </div>
+                                <div>
+                                    <h6 class="nomeTransacao">Dividendos</h6>
+                                    <small class="nomeCategoria">Investimentos</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="valorTransacao">R$ 2.500,00</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="cardTransacaoIndividual">
+                            <div class="grupoDetalhesTransacao">
+                                <div class="avatarIconeCategoria">
+                                    <i class="bi bi-laptop iconeCategoria"></i>
+                                </div>
+                                <div>
+                                    <h6 class="nomeTransacao">Projeto Web</h6>
+                                    <small class="nomeCategoria">Freelance</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="valorTransacao">R$ 3.000,00</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="cardTransacaoIndividual">
+                            <div class="grupoDetalhesTransacao">
+                                <div class="avatarIconeCategoria">
+                                    <i class="bi bi-book iconeCategoria"></i>
+                                </div>
+                                <div>
+                                    <h6 class="nomeTransacao">Venda de Livros</h6>
+                                    <small class="nomeCategoria">Outros</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="valorTransacao">R$ 2.000,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTEÚDO DE DESPESAS (Oculto por padrão) -->
+                <div id="conteudoDespesas" class="d-none">
+                    <!-- Cartão de Resumo -->
+                    <div class="painelResumoMensal">
+                        <h6 class="labelResumoMensal">Total de Despesas do Mês</h6>
+                        <h2 class="valorSaldoMensal text-danger">R$ 4.200,00</h2>
+                    </div>
+
+                    <!-- Lista de Transações -->
+                    <div class="feedTransacoes">
+                        <!-- Item 1 -->
+                        <div class="cardTransacaoIndividual">
+                            <div class="grupoDetalhesTransacao">
+                                <div class="avatarIconeCategoria">
+                                    <i class="bi bi-house-door iconeCategoria"></i>
+                                </div>
+                                <div>
+                                    <h6 class="nomeTransacao">Aluguel</h6>
+                                    <small class="nomeCategoria">Moradia</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="valorTransacao text-danger">R$ 2.500,00</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="cardTransacaoIndividual">
+                            <div class="grupoDetalhesTransacao">
+                                <div class="avatarIconeCategoria">
+                                    <i class="bi bi-cart3 iconeCategoria"></i>
+                                </div>
+                                <div>
+                                    <h6 class="nomeTransacao">Supermercado</h6>
+                                    <small class="nomeCategoria">Alimentação</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="valorTransacao text-danger">R$ 1.200,00</span>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="cardTransacaoIndividual">
+                            <div class="grupoDetalhesTransacao">
+                                <div class="avatarIconeCategoria">
+                                    <i class="bi bi-fuel-pump iconeCategoria"></i>
+                                </div>
+                                <div>
+                                    <h6 class="nomeTransacao">Combustível</h6>
+                                    <small class="nomeCategoria">Transporte</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="valorTransacao text-danger">R$ 500,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Botão de Ação Flutuante (FAB) -->
+    <a href="placeholder.html" class="botaoFlutuanteNovoRegistro">
+        <i class="bi bi-plus-lg iconeBotaoAdicionar"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Personalizado -->
+    <script>
+        function alternarAba(tipo) {
+            const btnReceitas = document.getElementById('btnReceitas');
+            const btnDespesas = document.getElementById('btnDespesas');
+            const conteudoReceitas = document.getElementById('conteudoReceitas');
+            const conteudoDespesas = document.getElementById('conteudoDespesas');
+
+            if (tipo === 'receitas') {
+                btnReceitas.className = 'botaoVisaoAtiva';
+                btnDespesas.className = 'botaoVisaoInativa';
+                conteudoReceitas.classList.remove('d-none');
+                conteudoDespesas.classList.add('d-none');
+            } else {
+                btnReceitas.className = 'botaoVisaoInativa';
+                btnDespesas.className = 'botaoVisaoAtiva';
+                conteudoReceitas.classList.add('d-none');
+                conteudoDespesas.classList.remove('d-none');
+            }
+        }
+    </script>
+</body>
+
+</html>
