@@ -1,9 +1,11 @@
 # 💰 Minha Carteira Minha Vida - Fintech
 
+**Nicolas Abrantes Bicalho - RM567161**
+
 Bem-vindo ao repositório do projeto **Minha Carteira Minha Vida**. Este projeto consiste no desenvolvimento do front-end de uma aplicação web responsiva para controle financeiro pessoal, focado na acessibilidade e simplicidade para o público brasileiro.
 
 ## 📱 A Tela Desenvolvida
-Nesta entrega, focamos na **Tela de Histórico de Transações**.
+Nesta entrega, foquei no desenvolvimento da **Tela de Histórico de Transações**.
 Esta tela permite ao usuário visualizar o resumo financeiro do mês e listar detalhadamente suas receitas e despesas.
 
 ### Funcionalidades da Tela:
