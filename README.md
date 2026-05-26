@@ -61,7 +61,7 @@ A autenticação inicial salva o estado no `sessionStorage`. Para acessar todas 
 * **Email de Teste:** `nicolas@fiap.com.br`
 * **Senha:** `123456`
 
-*(Nota: O banco de dados pode estar vazio caso as tabelas tenham sido dropadas (spring.jpa.hibernate.ddl-auto=update). Se o login falhar, basta ir na tela de **"Criar Conta"** e registrar este mesmo e-mail antes de logar).*
+*(Nota: O banco de dados pode estar vazio caso as tabelas tenham sido dropadas. Se o login falhar, basta ir na tela de **"Criar Conta"** e registrar este mesmo e-mail antes de logar).*
 
 ## 🎨 Design System e Features de Destaque
 - Componentização de Modais, Inputs e Botões com variantes (Outlined, Text, Filled).
@@ -71,4 +71,4 @@ A autenticação inicial salva o estado no `sessionStorage`. Para acessar todas 
 - Tooltips nativos e *Hover effects* polidos.
 
 ---
-**FIAP - Faculdade de Informática e Administração Paulista - 2024**
+**FIAP - Faculdade de Informática e Administração Paulista - 2026**
