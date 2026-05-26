@@ -35,7 +35,12 @@ Todos os endpoints respondem aos verbos HTTP (GET, POST, PUT e DELETE) e gerenci
 ### 1. Inicializando o Backend (Spring Boot)
 1. Certifique-se de ter o JDK 17+ instalado na máquina.
 2. Navegue até a pasta `backend/`.
-3. Preencha suas credenciais (Usuário e Senha) do Oracle no arquivo `src/main/resources/application.properties`.
+3. Para proteger os dados do banco Oracle da FIAP, as credenciais estão configuradas via Variáveis de Ambiente. Antes de iniciar, exporte suas credenciais no terminal (substituindo pelos seus dados):
+   ```bash
+   export DB_USER=RM000000
+   export DB_PASS=000000
+   ```
+   *(Alternativamente, você pode preencher suas credenciais direto no arquivo `src/main/resources/application.properties` para testes locais).*
 4. Compile e inicie o projeto via Maven:
    ```bash
    ./mvnw spring-boot:run
