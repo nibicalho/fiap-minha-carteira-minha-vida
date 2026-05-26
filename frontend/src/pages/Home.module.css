@@ -1,0 +1,559 @@
+/* ================================================================
+   Home.module.css
+   Grid do Dashboard: sidebar fixa 256px (desktop) + área de conteúdo
+
+   Design System:
+     background:       #f8f9fc
+     surface:          #f8fafb
+     primary:          #003a55
+     primary-container:#115273
+     surface-ctr-low:  #f3f3f6
+     surface-ctr-high: #e7e8eb
+     on-surface:       #191c1e
+     on-surf-variant:  #41484d
+     outline:          #71787e
+     secondary-cont:   #b4e3fd
+     error:            #ba1a1a
+   ================================================================ */
+
+/* ── App Shell: sidebar + conteúdo em linha no desktop ── */
+.appShell {
+  display: flex;
+  min-height: 100svh;
+  background-color: #f8f9fc;
+}
+
+/* ── Área de conteúdo ── */
+.mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Desktop: afasta à direita da sidebar */
+@media (min-width: 768px) {
+  .mainArea {
+    margin-left: 256px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   TOP APP BAR
+   ════════════════════════════════════════════ */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 2rem;
+  height: 72px;
+  background-color: #f8f9fc;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #edeef1;
+}
+
+/* Hamburguer — só mobile */
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #003a55;
+  border-radius: 50%;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.menuBtn:hover { background: #e7e8eb; }
+
+@media (min-width: 768px) {
+  .menuBtn { display: none; }
+}
+
+/* Título da barra */
+.topBarTitulo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #003a55;
+  margin: 0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+  .topBarTitulo {
+    font-size: 1.125rem;
+  }
+}
+
+/* Ações do topo */
+.topBarAcoes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Campo de busca — oculto no mobile */
+.buscaWrapper {
+  display: none;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .buscaWrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.buscaIcon {
+  position: absolute;
+  left: 1rem;
+  color: #507e95;
+  pointer-events: none;
+}
+
+.buscaInput {
+  height: 48px;
+  width: 280px;
+  background-color: #e8eff3;
+  border: none;
+  border-radius: 9999px;
+  padding: 0 1rem 0 2.75rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: #191c1e;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.buscaInput:focus {
+  box-shadow: 0 0 0 2px #003a55;
+}
+
+.buscaInput::placeholder { color: #507e95; }
+
+/* Botão Nova Transação */
+.btnNovaTransacao {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 48px;
+  padding: 0 1.25rem;
+  background-color: #003a55;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 1px 4px rgba(0, 58, 85, 0.25);
+}
+
+.btnNovaTransacao:hover { background: #115273; }
+.btnNovaTransacao:active { transform: scale(0.97); }
+
+@media (max-width: 767px) {
+  .btnNovaTransacao { display: none; }
+}
+
+/* ════════════════════════════════════════════
+   CANVAS DO DASHBOARD
+   ════════════════════════════════════════════ */
+.canvas {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 1280px;
+  /* Padding inferior para não ficar atrás da bottom nav no mobile */
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 767px) {
+  .canvas {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* ── Alerta de erro ── */
+.erroAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(186, 26, 26, 0.07);
+  border: 1px solid rgba(186, 26, 26, 0.25);
+  border-radius: 0.75rem;
+  color: #ba1a1a;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+}
+
+.btnRetentar {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #ba1a1a;
+  text-decoration: underline;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+/* ════════════════════════════════════════════
+   GRID SUPERIOR — Saldo + Resumo Mensal
+   ════════════════════════════════════════════ */
+.gridTopo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .gridTopo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Card Resumo Mensal ── */
+.cardResumo {
+  background-color: #ffffff;
+  border: 1px solid #e7e8eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardResumoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardResumoTitulo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #191c1e;
+  margin: 0;
+}
+
+.resumoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+}
+
+.resumoItem {
+  background-color: #f3f3f6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.resumoItemLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #71787e;
+}
+
+.dotVerde {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c0e8ff;
+  flex-shrink: 0;
+}
+
+.dotVermelho {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffdad6;
+  border: 1px solid rgba(186,26,26,0.2);
+  flex-shrink: 0;
+}
+
+.resumoItemValor {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #191c1e;
+}
+
+/* Barra de proporção */
+.proporcaoWrapper {
+  border-top: 1px solid #e7e8eb;
+  padding-top: 1rem;
+}
+
+.proporcaoBarra {
+  display: flex;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: #e7e8eb;
+}
+
+.proporcaoEntradas {
+  height: 100%;
+  background-color: #c0e8ff;
+  transition: width 0.6s ease;
+}
+
+.proporcaoSaidas {
+  height: 100%;
+  background-color: #ffdad6;
+  transition: width 0.6s ease;
+}
+
+.proporcaoLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #71787e;
+}
+
+/* ════════════════════════════════════════════
+   SEÇÕES COMUNS: Diagnóstico + Despesas
+   ════════════════════════════════════════════ */
+.secaoDiagnostico,
+.secaoDespesas {
+  background-color: #ffffff;
+  border: 1px solid #e7e8eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.secaoHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.secaoTitulo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #191c1e;
+  margin: 0 0 0.25rem 0;
+}
+
+.secaoSubtitulo {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #71787e;
+  margin: 0;
+}
+
+.linkVerTodos {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #003a55;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 0.125rem;
+  transition: color 0.15s;
+}
+
+.linkVerTodos:hover { color: #115273; text-decoration: underline; }
+
+/* ── Diagnóstico: lista de categorias ── */
+.listaCategorias {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.categoriaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.categoriaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.categoriaEsq {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.categoriaAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #edeef1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #35647a;
+  flex-shrink: 0;
+}
+
+.categoriaNomeWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoriaNome {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #191c1e;
+}
+
+.categoriaDesc {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  color: #71787e;
+}
+
+.categoriaDir {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.categoriaTotal {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #191c1e;
+}
+
+.categoriaTotalError { color: #ba1a1a; }
+
+.categoriaLimite {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  color: #71787e;
+}
+
+/* Barra de progresso por categoria */
+.progressTrack {
+  width: 100%;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #e7e8eb;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progressFillError { background-color: #ba1a1a !important; }
+
+.acimaDolimite {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ba1a1a;
+  margin: 0;
+  text-align: right;
+}
+
+/* ── Estado vazio de categorias ── */
+.vazioCategoria {
+  padding: 2rem;
+  text-align: center;
+  color: #71787e;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+}
+
+/* ── Skeleton das barras de categoria ── */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeletonBars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skeletonBarRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skeletonBarAvatar,
+.skeletonBarLine,
+.skeletonBarProgress {
+  background: linear-gradient(90deg, #edeef1 25%, #e1e2e5 50%, #edeef1 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 0.375rem;
+}
+
+.skeletonBarAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.skeletonBarContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeletonBarLine {
+  height: 0.75rem;
+  width: 40%;
+  border-radius: 9999px;
+}
+
+.skeletonBarProgress {
+  height: 10px;
+  width: 100%;
+  border-radius: 9999px;
+}

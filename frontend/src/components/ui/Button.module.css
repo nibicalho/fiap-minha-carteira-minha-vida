@@ -1,0 +1,73 @@
+/* ================================================================
+   Button.module.css
+   Botão primário — sistema de design financeiro
+   primary:          #003a55
+   primary-container:#115273
+   on-primary:       #ffffff
+   ================================================================ */
+
+/* Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 48px;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Largura total */
+.fullWidth {
+  width: 100%;
+}
+
+/* Variante primária */
+.primary {
+  background-color: #003a55;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.primary:hover:not(.disabled) {
+  background-color: #115273;
+  box-shadow: 0 4px 12px rgba(0, 58, 85, 0.30);
+}
+
+.primary:active:not(.disabled) {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+/* Estado desabilitado/loading */
+.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Spinner de loading */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.30);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

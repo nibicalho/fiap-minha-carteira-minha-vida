@@ -1,0 +1,27 @@
+/* ── Reset Global ──
+   As variáveis de cor e tipografia do projeto estão definidas
+   nos arquivos de cada página (Login.css, Home.css).
+   Este arquivo apenas provê um reset limpo.
+   ─────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* #root sem restrições de largura ou alinhamento —
+   cada página controla seu próprio layout         */
+#root {
+  width: 100%;
+  min-height: 100svh;
+}

@@ -1,0 +1,273 @@
+/* ================================================================
+   Historico.module.css
+   Página de Histórico de Transações
+   ================================================================ */
+
+.appShell {
+  display: flex;
+  min-height: 100svh;
+  background-color: #f8f9fc;
+}
+
+.mainArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .mainArea {
+    margin-left: 256px;
+  }
+}
+
+/* ── Top App Bar ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 2rem;
+  height: 72px;
+  background-color: #f8f9fc;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #edeef1;
+}
+
+@media (max-width: 767px) {
+  .topBar { padding: 0 1rem; }
+}
+
+.topBarTitulo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #003a55;
+  margin: 0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topBarAcoes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Busca Desktop */
+.buscaWrapper {
+  display: none;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .buscaWrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.buscaIcon {
+  position: absolute;
+  left: 1rem;
+  color: #507e95;
+  pointer-events: none;
+}
+
+.buscaInput {
+  height: 48px;
+  width: 280px;
+  background-color: #e8eff3;
+  border: none;
+  border-radius: 9999px;
+  padding: 0 1rem 0 2.75rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: #191c1e;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.buscaInput:focus {
+  box-shadow: 0 0 0 2px #003a55;
+}
+
+/* Botão Nova Transação */
+.btnNovaTransacao {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 48px;
+  padding: 0 1.25rem;
+  background-color: #003a55;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 1px 4px rgba(0, 58, 85, 0.25);
+}
+
+.btnNovaTransacao:hover { background: #115273; }
+.btnNovaTransacao:active { transform: scale(0.97); }
+
+@media (max-width: 767px) {
+  .btnNovaTransacao { display: none; }
+}
+
+/* ── Canvas da Página ── */
+.canvas {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .canvas {
+    padding: 1rem;
+    padding-bottom: 6rem; /* para a bottom nav */
+  }
+}
+
+/* ── Cabeçalho e Filtros ── */
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .pageHeader {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.pageTitulo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0 0 0.25rem 0;
+}
+
+.pageSubtitulo {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: #41484d;
+  margin: 0;
+}
+
+/* Segmented Control */
+.segmentControl {
+  display: flex;
+  background-color: #e7e8eb; /* surface-container-high */
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .segmentControl {
+    width: 320px;
+  }
+}
+
+.segmentBtn {
+  flex: 1;
+  padding: 0.5rem 0;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: none;
+  background: transparent;
+  color: #41484d; /* on-surface-variant */
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.segmentBtn:hover:not(.segmentBtnAtivo) {
+  background-color: #e1e2e5; /* surface-container-highest */
+}
+
+.segmentBtnAtivo {
+  background-color: #f8fafb; /* surface */
+  color: #115273; /* primary-container */
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* ── Footer da Tabela ── */
+.tableFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f3f3f6; /* surface-container-low */
+  border: 1px solid #e7e8eb; /* surface-container-high */
+  border-top: none;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #41484d;
+  margin-top: -1.5rem; /* Puxa para cima para colar na tabela */
+}
+
+@media (max-width: 767px) {
+  .tableFooter {
+    border-radius: 0.5rem;
+    margin-top: 0;
+    border-top: 1px solid #e7e8eb;
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  background: transparent;
+  border: none;
+  color: #41484d;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnPage:hover:not(:disabled) {
+  background-color: #e7e8eb;
+}
+
+.btnPage:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnPage span {
+  font-size: 18px;
+}

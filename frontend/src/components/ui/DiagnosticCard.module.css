@@ -1,0 +1,211 @@
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e7e8eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.filtroMes {
+  display: flex;
+  align-items: center;
+}
+
+.inputMes {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #191c1e;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid #e7e8eb;
+  border-radius: 0.5rem;
+  background-color: #f8fafb;
+  outline: none;
+  cursor: pointer;
+}
+
+.inputMes:focus {
+  border-color: #003a55;
+}
+
+.titulo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #191c1e;
+  margin: 0 0 0.25rem 0;
+}
+
+.subtitulo {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #71787e;
+  margin: 0;
+}
+
+.link {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #003a55;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 0.125rem;
+  transition: color 0.15s;
+}
+
+.link:hover {
+  color: #115273;
+  text-decoration: underline;
+}
+
+/* ── Lista de categorias ── */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemEsq {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #edeef1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #35647a;
+  flex-shrink: 0;
+}
+
+.nomeWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nome {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #191c1e;
+}
+
+.desc {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  color: #71787e;
+}
+
+.itemDir {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #191c1e;
+}
+
+/* Barra de progresso */
+.progressTrack {
+  width: 100%;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #e7e8eb;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado Vazio */
+.vazio {
+  padding: 2rem;
+  text-align: center;
+  color: #71787e;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+}
+
+/* ── Skeleton das barras ── */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeletonBars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skeletonBarRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skeletonBarAvatar,
+.skeletonBarLine,
+.skeletonBarProgress {
+  background: linear-gradient(90deg, #edeef1 25%, #e1e2e5 50%, #edeef1 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 0.375rem;
+}
+
+.skeletonBarAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.skeletonBarContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeletonBarLine {
+  height: 0.75rem;
+  width: 40%;
+  border-radius: 9999px;
+}
+
+.skeletonBarProgress {
+  height: 10px;
+  width: 100%;
+  border-radius: 9999px;
+}

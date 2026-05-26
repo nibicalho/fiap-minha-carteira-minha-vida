@@ -1,0 +1,177 @@
+/* ================================================================
+   ExpenseList.module.css
+   ================================================================ */
+
+/* Container geral */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Item de despesa ── */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #edeef1;
+  transition: background 0.15s;
+}
+
+.item:last-child { border-bottom: none; }
+
+/* Avatar da categoria */
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  background-color: #edeef1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #35647a;
+  flex-shrink: 0;
+}
+
+/* Descrição + categoria */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.descricao {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #191c1e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.categoria {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #71787e;
+}
+
+/* Valor + data */
+.valores {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+  flex-shrink: 0;
+}
+
+.valor {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.valorDespesa {
+  color: #ba1a1a;
+}
+
+.valorReceita {
+  color: #2e7d32;
+}
+
+.data {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.6875rem;
+  color: #71787e;
+}
+
+/* ── Estado vazio ── */
+.vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1rem;
+  color: #71787e;
+  text-align: center;
+}
+
+.vazioMsg {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: #41484d;
+  margin: 0;
+}
+
+.linkAdicionar {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #003a55;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0;
+}
+
+/* ── Skeleton loader ── */
+.skeleton {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #edeef1;
+}
+
+.skeleton:last-child { border-bottom: none; }
+
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeletonAvatar,
+.skeletonLine,
+.skeletonValor {
+  background: linear-gradient(90deg, #edeef1 25%, #e1e2e5 50%, #edeef1 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 0.375rem;
+}
+
+.skeletonAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  flex-shrink: 0;
+}
+
+.skeletonLines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.skeletonLine {
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.skeletonLineShort {
+  width: 55%;
+  height: 0.625rem;
+}
+
+.skeletonValor {
+  width: 5rem;
+  height: 0.875rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}

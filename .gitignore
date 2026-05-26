@@ -1,11 +1,45 @@
-# Arquivos de Sistema Operacional
+# =========================================================================
+# GERAL
+# =========================================================================
 .DS_Store
 Thumbs.db
-
-# Logs e arquivos temporários
 *.log
 *.tmp
+.env
+.env.*
 
-# IDEs
+# =========================================================================
+# IDEs e Editores
+# =========================================================================
 .vscode/
 .idea/
+*.iws
+*.iml
+*.ipr
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# =========================================================================
+# BACKEND (Java / Spring Boot / Maven)
+# =========================================================================
+backend/target/
+backend/build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================================================================
+# FRONTEND (Node / React / Vite)
+# =========================================================================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*

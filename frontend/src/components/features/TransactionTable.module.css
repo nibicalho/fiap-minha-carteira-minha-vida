@@ -1,0 +1,293 @@
+.wrapper {
+  background-color: #f8fafb; /* surface */
+  border: 1px solid #e7e8eb; /* surface-container-high */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.vazio {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #71787e;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+}
+
+/* ── Tabela Desktop (Cabeçalho) ── */
+.tableHeader {
+  display: grid;
+  grid-template-columns: 5fr 3fr 2fr 2fr 5rem;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #f3f3f6; /* surface-container-low */
+  border-bottom: 1px solid #e7e8eb;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #71787e; /* outline */
+}
+
+.sortableHeader {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.sortableHeader:hover {
+  color: #191c1e;
+}
+
+@media (max-width: 767px) {
+  .tableHeader {
+    display: none; /* Oculta cabeçalho no mobile */
+  }
+}
+
+/* ── Corpo da Tabela ── */
+.tableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 5fr 3fr 2fr 2fr 5rem;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  border-bottom: 1px solid #edeef1; /* surface-container */
+  transition: background-color 0.15s;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background-color: #f8f9fc; /* surface-bright */
+}
+
+/* ── Colunas ── */
+.colDesc {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.colCat {
+  display: flex;
+  align-items: center;
+}
+
+.colData {
+  display: flex;
+  align-items: center;
+}
+
+.row .colData {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: #41484d; /* on-surface-variant */
+}
+
+.headerActive {
+  color: #003a55; /* primary */
+  font-weight: 700;
+}
+
+.colValor {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.colAcoesHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.colAcoes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  opacity: 1;
+}
+
+/* ── Elementos Visuais ── */
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarReceita {
+  background-color: #c6f6d5;
+  color: #1b5e20;
+}
+
+.avatarDespesa {
+  background-color: #fed7d7;
+  color: #ba1a1a;
+}
+
+.avatar span {
+  font-size: 20px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.descTexto {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #191c1e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+
+.row:hover .descTexto {
+  color: #003a55; /* primary */
+}
+
+.descSubTexto {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: #41484d; /* on-surface-variant */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badgeCategoria {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background-color: #edeef1;
+  color: #41484d;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.valorTexto {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.valorPositivo {
+  color: #1b5e20;
+}
+
+.valorNegativo {
+  color: #ba1a1a;
+}
+
+.mobileDataTexto {
+  display: none;
+}
+
+.btnAcao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  background: none;
+  border: none;
+  color: #71787e;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btnAcao:hover {
+  background-color: #e1e2e5;
+  color: #191c1e;
+}
+
+.btnDelete:hover {
+  background-color: #ffdad6; /* error-container */
+  color: #93000a; /* on-error-container */
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVO (Mobile)
+   ════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .wrapper {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .tableBody {
+    gap: 0.5rem;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr auto min-content;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: #ffffff; /* surface-container-lowest */
+    border: 1px solid #edeef1;
+    border-radius: 0.5rem;
+  }
+
+  .colCat,
+  .colData {
+    display: none;
+  }
+
+  .colValor {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.125rem;
+  }
+
+  .colAcoes {
+    display: flex;
+    flex-direction: row;
+    opacity: 1; /* Always visible on mobile */
+  }
+
+  .avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .descTexto {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  
+  .mobileDataTexto {
+    display: block;
+    font-family: 'Noto Sans', system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: #41484d;
+    margin-top: 0.25rem;
+  }
+}

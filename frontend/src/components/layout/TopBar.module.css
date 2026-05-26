@@ -1,0 +1,146 @@
+/* ================================================================
+   TopBar.module.css
+   ================================================================ */
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  padding: 0 1.5rem;
+  background-color: #f8f9fc; /* background */
+  border-bottom: 1px solid #e7e8eb; /* surface-container-high */
+  flex-shrink: 0;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #191c1e;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+.menuBtn:hover {
+  background-color: #e1e2e5;
+}
+
+.menuBtn span {
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .menuBtn {
+    display: none;
+  }
+}
+
+.titulo {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #003a55; /* primary */
+  margin: 0;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.monthPickerContainer {
+  position: relative;
+}
+
+.btnMonthPicker {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  height: 40px;
+  padding: 0 1rem;
+  background-color: transparent;
+  color: #003a55; /* primary */
+  border: 1px solid #003a55;
+  border-radius: 0.25rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btnMonthPicker:hover {
+  background-color: #003a55;
+  color: #ffffff;
+}
+
+.btnMonthPicker:active {
+  transform: scale(0.98);
+}
+
+.btnMonthPicker span {
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .btnMonthPicker {
+    display: flex;
+  }
+}
+
+.hiddenInputMes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.btnNovaTransacao {
+  display: none; /* Esconde no mobile, pois tem o FAB na sidebar */
+  align-items: center;
+  gap: 0.5rem;
+  height: 40px;
+  padding: 0 1rem;
+  background-color: transparent;
+  color: #003a55; /* primary */
+  border: 1px solid #003a55;
+  border-radius: 0.25rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btnNovaTransacao:hover {
+  background-color: #003a55;
+  color: #ffffff;
+}
+
+.btnNovaTransacao:active {
+  transform: scale(0.98);
+}
+
+.btnNovaTransacao span {
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .btnNovaTransacao {
+    display: flex;
+  }
+}

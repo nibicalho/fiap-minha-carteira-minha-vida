@@ -1,0 +1,123 @@
+.card {
+  position: relative;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Variants */
+.positive {
+  border: 1px solid #d5ecd8; /* subtle green border */
+}
+
+.negative {
+  border: 1px solid #f9dcd8; /* subtle red border */
+}
+
+/* Corner Blob */
+.cornerBlob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  z-index: 0;
+}
+
+.positive .cornerBlob {
+  background-color: #ebf9ee; /* very light green */
+}
+
+.negative .cornerBlob {
+  background-color: #fbeae9; /* very light red */
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #4a5568;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.positive .iconBox {
+  background-color: #c6f6d5;
+  color: #1b5e20;
+}
+
+.negative .iconBox {
+  background-color: #fed7d7;
+  color: #ba1a1a;
+}
+
+/* Value */
+.valor {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.positive .valor {
+  color: #1b5e20;
+}
+
+.negative .valor {
+  color: #ba1a1a;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 0 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer / Sublabel */
+.sublabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.subIcon {
+  display: flex;
+  align-items: center;
+  color: #718096;
+}

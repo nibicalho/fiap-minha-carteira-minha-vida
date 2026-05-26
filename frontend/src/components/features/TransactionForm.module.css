@@ -1,0 +1,145 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* section-gap */
+}
+
+/* ── Segmented Control ── */
+.segmentControl {
+  display: flex;
+  background-color: #e7e8eb; /* surface-container-high */
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.segmentBtn {
+  flex: 1;
+  padding: 0.5rem 0;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: none;
+  background: transparent;
+  color: #41484d; /* on-surface-variant */
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.segmentBtn:hover:not(.segmentBtnAtivo) {
+  background-color: #e1e2e5; /* surface-container-highest */
+}
+
+.segmentBtnAtivo {
+  background-color: #115273; /* primary-container */
+  color: #ffffff; /* on-primary */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  font-weight: 700;
+}
+
+.erro {
+  background-color: #ffdad6;
+  color: #ba1a1a;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* ── Valor ── */
+.valorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #f3f3f6; /* surface-container-low */
+  border-radius: 0.75rem;
+}
+
+.valorInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.moeda {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.375rem; /* headline-lg approx */
+  font-weight: 700;
+  color: #003a55; /* primary */
+  margin-right: 0.5rem;
+  transition: color 0.2s;
+}
+
+.moedaReceita {
+  color: #2a6486; /* surface-tint */
+}
+
+.valorInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 2rem; /* bigger for impact */
+  font-weight: 700;
+  color: #003a55; /* primary */
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.valorInputReceita {
+  color: #2a6486; /* surface-tint */
+}
+
+.valorInput:focus {
+  outline: none;
+}
+
+.valorInput::placeholder {
+  color: #97cdf3; /* primary-fixed-dim */
+}
+
+/* ── Campos Normais ── */
+.camposGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* field-gap */
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.col {
+  flex: 1;
+  min-width: 0; /* Impede o flex item de transbordar no mobile se conteudo for grande */
+}
+
+.actionArea {
+  margin-top: 0.5rem;
+}
+
+.submitBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVO (Mobile)
+   ════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+  }
+}

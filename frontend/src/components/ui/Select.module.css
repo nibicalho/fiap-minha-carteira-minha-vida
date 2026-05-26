@@ -1,0 +1,59 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #507e95; /* placeholder */
+  pointer-events: none;
+}
+
+.select {
+  width: 100%;
+  height: 56px; /* h-14 */
+  background-color: #e8eff3; /* input-bg */
+  border: none;
+  border-radius: 0.5rem; /* rounded-lg */
+  padding-left: 1rem;
+  padding-right: 2.5rem; /* space for chevron */
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 1rem; /* text-body-lg */
+  color: #191c1e; /* on-surface */
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.withIcon {
+  padding-left: 3rem; /* pl-12 space for left icon */
+}
+
+.select:focus {
+  box-shadow: 0 0 0 2px #115273; /* ring-2 primary-container */
+}
+
+/* Hide default arrow in some browsers */
+.select::-ms-expand {
+  display: none;
+}
+
+.chevronWrapper {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  color: #507e95; /* placeholder */
+}

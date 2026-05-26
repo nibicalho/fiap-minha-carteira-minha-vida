@@ -1,0 +1,91 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(25, 28, 30, 0.4); /* on-background com opacidade */
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modalContainer {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff; /* surface-container-lowest */
+  border-radius: 0.75rem; /* xl */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 90vh; /* não deixa o modal passar da tela */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e1e2e5; /* surface-variant */
+  background-color: #ffffff;
+}
+
+.title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  color: #41484d; /* on-surface-variant */
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.closeBtn:hover {
+  background-color: #e1e2e5; /* surface-variant */
+  color: #191c1e;
+}
+
+.closeBtn span {
+  font-size: 24px;
+}
+
+.body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  /* Hide scrollbar for clean UI */
+  scrollbar-width: none;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVO (Mobile)
+   ════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .backdrop {
+    padding: 0;
+    align-items: flex-end; /* no mobile, o modal gruda embaixo ou ocupa quase a tela toda */
+  }
+
+  .modalContainer {
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-height: 95vh;
+  }
+}
